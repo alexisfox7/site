@@ -16,6 +16,13 @@
     box.style.top = y + 'px';
   }
 
+  // Show inversion status
+  const status = document.getElementById('status');
+  if (status) {
+    status.textContent = isInverted ? 'Controls: INVERTED' : 'Controls: NORMAL';
+    status.style.color = isInverted ? 'red' : 'green';
+  }
+
   function move(dirLabel) {
     // logical direction: 'up' means y -= STEP, 'down' means y += STEP
     const logicalDelta = dirLabel === 'up' ? -STEP : STEP;

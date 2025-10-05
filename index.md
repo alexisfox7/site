@@ -12,5 +12,7 @@ title: Opposite Buttons Test
   <button id="downBtn" class="btn">⬇️ Down</button>
 </div>
 
+<div id="status" style="margin-top: 1rem; font-weight: bold;"></div>
+
 <link rel="stylesheet" href="{{ '/assets/app.css' | relative_url }}">
 <script defer src="{{ '/assets/app.js' | relative_url }}"></script>
