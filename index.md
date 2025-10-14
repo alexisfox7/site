@@ -97,7 +97,7 @@ h1 {
 ## Publications
 **A Unifying Information-theoretic Perspective on Evaluating Generative Models** \\
 *<u>Alexis Fox</u>, Samarth Swarup, Abhijin Adiga*  \\
-Proceedings of the AAAI Conference on Artificial Intelligence [main track, 2025]  \\
-<span class="highlight-oral">Oral (top 5%)</span> 
+Proceedings of the AAAI Conference on Artificial Intelligence [2025]  \\
+<span class="highlight-oral">Oral (5%)</span> 
 
 [[Paper](https://arxiv.org/abs/2412.14340)] [[Code](https://github.com/NSSAC/PrecisionRecallMetric)]
