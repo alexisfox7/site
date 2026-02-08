@@ -27,18 +27,27 @@ layout: default
 }
 
 .profile-image {
-  flex: 0 0 200px;
+  flex: 0 0 130px;
   order: -1;
-  margin-top: 15px;
+  margin-top: 5px;
 }
 
 .profile-image img {
   width: 100%;
-  height: 240px;
+  aspect-ratio: 5 / 6;
+  height: auto;
   border-radius: 3px;
   display: block;
   object-fit: cover;
   object-position: center;
+}
+
+.profile-under {
+  margin-top: 6px;
+}
+
+.profile-under p {
+  margin: 0 0 10px;
 }
 
 .highlight-oral {
@@ -77,15 +86,16 @@ h1 {
     <h1>Alexis Fox</h1>
     
     <p>I am a 2nd-year CS student at Duke University. <br> I'm currently working on web agents under <a href="https://www.shuyanzhou.com/">Shuyan Zhou</a>.</p>
-    
+
+    <div class="profile-under">
+      <p><a href="mailto:alexis.fox@duke.edu">Email</a> / <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&authuser=2&hl=en&user=iVIop8YAAAAJ&authuser=2">Google Scholar</a> / <a href="https://github.com/foxden09">Github</a> / <a href="https://www.linkedin.com/in/alexis-fox7/">Linkedin</a></p>
+    </div>
+
+    <!--
     <br>
-    
+
     <p>I previously worked with <a href="https://www.linkedin.com/in/claytonkerce/">Clayton Kerce</a> at GTRI, and with <br> <a href="https://biocomplexity.virginia.edu/our-team/samarth-swarup">Samarth Swarup</a> & <a href="https://biocomplexity.virginia.edu/our-team/abhijin-adiga">Abhijin Adiga</a> at UVA's Biocomplexity Institute.</p>
-
-    <!-- <p>Interested in <a href="https://garymarcus.substack.com/p/how-o3-and-grok-4-accidentally-vindicated?utm_source=post-email-title&publication_id=888615&post_id=168187066&utm_campaign=email-post-title&isFreemail=true&r=47i8u&triedRedirect=true&utm_medium=email">neuro-symbolic AI</a>.</p> -->
-
-
-    <p><a href="mailto:alexis.fox@duke.edu">Email</a> / <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&authuser=2&hl=en&user=iVIop8YAAAAJ&authuser=2">Google Scholar</a> / <a href="https://github.com/foxden09">Github</a> / <a href="https://www.linkedin.com/in/alexis-fox7/">Linkedin</a></p>
+    -->
     <!-- / <a href="[cv-link]">CV (Month Year)</a>  -->
   </div>
   
