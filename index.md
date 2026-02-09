@@ -85,7 +85,7 @@ h1 {
   <div class="profile-content">
     <h1>Alexis Fox</h1>
     
-    <p>I am a 2nd-year CS student at Duke University. <br> I'm currently working on web agents under <a href="https://www.shuyanzhou.com/">Shuyan Zhou</a>.</p>
+    <p>I am a 2nd-year CS student at Duke University. <br> I'm currently working on SLT for linear models under <a href="https://users.cs.duke.edu/~cynthia/">Dr. Cynthia Rudin</a> and web agents under <a href="https://www.shuyanzhou.com/">Dr. Shuyan Zhou</a>.</p>
 
     <div class="profile-under">
       <p><a href="mailto:alexis.fox@duke.edu">Email</a> / <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&authuser=2&hl=en&user=iVIop8YAAAAJ&authuser=2">Google Scholar</a> / <a href="https://github.com/foxden09">Github</a> / <a href="https://www.linkedin.com/in/alexis-fox7/">Linkedin</a></p>
