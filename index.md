@@ -104,7 +104,7 @@ h1 {
   </div>
 </div>
 
-## [Blog](/blog)
+## [Blog](https://blog.alexisfox.dev)
 
 <div style="margin-top: 50px;"></div>
 
