@@ -104,7 +104,8 @@ h1 {
   </div>
 </div>
 
-## [Blog](https://blog.alexisfox.dev)
+## Blog
+[Hill-climbing ARC-AGI-3](https://blog.alexisfox.dev/arcagi3) — Mar 2026
 
 <div style="margin-top: 50px;"></div>
 
