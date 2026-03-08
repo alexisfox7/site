@@ -85,7 +85,7 @@ h1 {
   <div class="profile-content">
     <h1>Alexis Fox</h1>
     
-    <p>I am a 2nd-year CS student at Duke University. <br> I'm currently working on SLT for linear models under <a href="https://users.cs.duke.edu/~cynthia/">Dr. Cynthia Rudin</a> and web agents under <a href="https://www.shuyanzhou.com/">Dr. Shuyan Zhou</a>.</p>
+    <p>I am a 2nd-year CS student at Duke University.</p>
 
     <div class="profile-under">
       <p><a href="mailto:alexis.fox@duke.edu">Email</a> / <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&authuser=2&hl=en&user=iVIop8YAAAAJ&authuser=2">Google Scholar</a> / <a href="https://github.com/foxden09">Github</a> / <a href="https://www.linkedin.com/in/alexis-fox7/">Linkedin</a></p>
@@ -100,14 +100,18 @@ h1 {
   </div>
   
   <div class="profile-image">
-    <img src="assets/images/profile.jpg" alt="Alexis Fox" />
+    <img src="assets/images/profile2.png" alt="Alexis Fox" />
   </div>
 </div>
+
+## [Blog](/blog)
+
+<div style="margin-top: 50px;"></div>
 
 ## Publications
 **A Unifying Information-theoretic Perspective on Evaluating Generative Models** \\
 *<u>Alexis Fox</u>, Samarth Swarup, Abhijin Adiga*  \\
 Proceedings of the AAAI Conference on Artificial Intelligence [2025]  \\
-<span class="highlight-oral">Oral (5%)</span> 
+<span class="highlight-oral">Oral (5%)</span>
 
 [[Paper](https://arxiv.org/abs/2412.14340)] [[Code](https://github.com/NSSAC/PrecisionRecallMetric)]
