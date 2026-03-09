@@ -73,6 +73,8 @@ h1 {
   }
   
   .profile-image {
+    flex: 0 0 auto;
+    width: 130px;
     align-self: center;
     margin-top: 0;
   }
@@ -85,7 +87,7 @@ h1 {
   <div class="profile-content">
     <h1>Alexis Fox</h1>
     
-    <p>I am a 2nd-year CS student at Duke University.</p>
+    <p>I am a 2nd-year CS undergraduate at Duke University.</p>
 
     <div class="profile-under">
       <p><a href="mailto:alexis.fox@duke.edu">Email</a> / <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&authuser=2&hl=en&user=iVIop8YAAAAJ&authuser=2">Google Scholar</a> / <a href="https://github.com/foxden09">Github</a> / <a href="https://www.linkedin.com/in/alexis-fox7/">Linkedin</a></p>
