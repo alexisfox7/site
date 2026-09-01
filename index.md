@@ -122,16 +122,23 @@ h2 { font-size: 1.75em; }
 
 /* stage 2: settles in and starts coding */
 .foxwrap.coding .fox-wake { opacity: 0; }
-.foxwrap.coding .fox-code { opacity: 1; animation: fox-type 3.6s steps(1) infinite; }
+.foxwrap.coding .fox-code { opacity: 1; }
+
+/* real frame animation: paws alternate (typing), glasses get nudged
+   occasionally. Each frame is a full sprite layered over the base. */
+.foxwrap .fox-code-l,
+.foxwrap .fox-code-r,
+.foxwrap .fox-code-g { opacity: 0; transition: none; }
+
+.foxwrap.coding .fox-code-l { animation: fox-type-l 0.34s steps(1) infinite; }
+.foxwrap.coding .fox-code-r { animation: fox-type-r 0.34s steps(1) infinite; }
+.foxwrap.coding .fox-code-g { animation: fox-nudge  5.4s  steps(1) infinite; }
+
+@keyframes fox-type-l { 0%, 49%  { opacity: 1; } 50%, 100% { opacity: 0; } }
+@keyframes fox-type-r { 0%, 49%  { opacity: 0; } 50%, 100% { opacity: 1; } }
+@keyframes fox-nudge  { 0%, 90%  { opacity: 0; } 91%, 96% { opacity: 1; } 97%, 100% { opacity: 0; } }
 .foxwrap.coding .excl     { opacity: 0; transform: translateY(-6px) scale(0.8); }
 .foxwrap.coding .caret    { opacity: 1; animation: fox-caret 0.9s steps(1) infinite; }
-
-/* one small nudge every few seconds — enough to feel alive, not jittery */
-@keyframes fox-type {
-  0%,  90%  { transform: translateY(0); }
-  91%, 95%  { transform: translateY(-1px); }
-  96%, 100% { transform: translateY(0); }
-}
 
 /* cursor blinking on the laptop screen, just past the last line of code */
 .caret {
@@ -247,7 +254,7 @@ h1 {
 
 <div class="profile-header">
   <div class="profile-content">
-    <h1>Alexis Fox<span class="foxwrap"><img class="fox-sleep" src="assets/images/fox.png" alt=""><img class="fox-wake" src="assets/images/fox-wake.png" alt=""><img class="fox-code" src="assets/images/fox-coding.png" alt=""><img class="excl" src="assets/images/excl.png" alt=""><span class="caret"></span></span></h1>
+    <h1>Alexis Fox<span class="foxwrap"><img class="fox-sleep" src="assets/images/fox.png" alt=""><img class="fox-wake" src="assets/images/fox-wake.png" alt=""><img class="fox-code" src="assets/images/fox-coding.png" alt=""><img class="fox-code fox-code-l" src="assets/images/fox-coding-l.png" alt=""><img class="fox-code fox-code-r" src="assets/images/fox-coding-r.png" alt=""><img class="fox-code fox-code-g" src="assets/images/fox-coding-g.png" alt=""><img class="excl" src="assets/images/excl.png" alt=""><span class="caret"></span></span></h1>
 
 <script>
   // Hovering anywhere in the profile block startles the fox awake ("!"),
