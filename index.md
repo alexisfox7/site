@@ -20,6 +20,11 @@ layout: default
   src: url('/assets/fonts/newsreader-latin-italic.woff2') format('woff2');
 }
 
+/* a little air above the page */
+.page-content {
+  padding-top: 62px;
+}
+
 /* Headings in Newsreader; body stays in the system sans. */
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Newsreader', 'Iowan Old Style', Palatino, Georgia, serif;
@@ -79,7 +84,7 @@ h2 { font-size: 1.75em; }
   transition: opacity 0.18s ease;
 }
 .foxwrap .fox-sleep { left: 50%; transform: translateX(-50%) translateX(-10px); width: 54px; }
-.foxwrap .fox-wake  { left: 50%; transform: translateX(-50%) translateX(-10px); width: 58px; opacity: 0; }
+.foxwrap .fox-wake  { left: 50%; transform: translateX(-50%) translateX(-10px); width: 51px; opacity: 0; }
 .foxwrap .fox-code  { left: 0;   width: 78px; opacity: 0;
                       top: auto; bottom: 0; }   /* bottom-aligned so its feet stay on the same line as the sleeping pose */
 
@@ -96,9 +101,23 @@ h2 { font-size: 1.75em; }
   image-rendering: pixelated;
 }
 
-/* stage 1: startled awake */
+/* stage 1: startled awake — with a little hop */
 .foxwrap.awake .fox-sleep { opacity: 0; }
-.foxwrap.awake .fox-wake  { opacity: 1; }
+.foxwrap.awake .fox-wake  {
+  opacity: 1;
+  animation: fox-hop 0.62s cubic-bezier(.25,.9,.35,1) 1;
+}
+
+/* the startle jump: up fast, land, small second bounce. No scaling —
+   scaling a 4px-tall eye bar visibly changes its size.
+   The translateX parts must be repeated or they'd be dropped mid-animation. */
+@keyframes fox-hop {
+  0%   { transform: translateX(-50%) translateX(-10px) translateY(0); }
+  14%  { transform: translateX(-50%) translateX(-10px) translateY(-9px); }
+  40%  { transform: translateX(-50%) translateX(-10px) translateY(0); }
+  60%  { transform: translateX(-50%) translateX(-10px) translateY(-4px); }
+  100% { transform: translateX(-50%) translateX(-10px) translateY(0); }
+}
 .foxwrap.awake .excl      { opacity: 1; transform: translateY(0) scale(1); }
 
 /* stage 2: settles in and starts coding */
@@ -238,7 +257,12 @@ h1 {
     var block = document.querySelector('.profile-header') || wrap;
     if (!wrap || !block) return;
     var timers = [];
+    var ready  = false;
+    // Ignore hovers for the first second, so the fox doesn't fire
+    // just because the cursor happened to be sitting there as the page loaded.
+    setTimeout(function () { ready = true; }, 1000);
     block.addEventListener('mouseenter', function () {
+      if (!ready) return;
       timers.forEach(clearTimeout);
       timers = [];
       wrap.classList.remove('coding');
