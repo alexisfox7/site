@@ -134,6 +134,39 @@ h2 { font-size: 1.75em; }
 .foxwrap.coding .fox-code-r { animation: fox-type-r 0.34s steps(1) infinite; }
 .foxwrap.coding .fox-code-g { animation: fox-nudge  5.4s  steps(1) infinite; }
 
+/* energy drink on the desk; every so often the fox takes a swig */
+.foxwrap .can {
+  position: absolute;
+  left: 43px;
+  top: auto;        /* cancel the shared `top: 0`, or the can stretches full-height */
+  bottom: 1px;
+  width: 7px;
+  height: auto;
+  opacity: 0;
+  transform-origin: 50% 90%;
+  transition: none;
+  image-rendering: pixelated;
+}
+/* the can is not on the desk — it only comes out for the swig */
+
+/* The swig. The can rests right beside the right paw, and the fox's mouth
+   sits at about (41, 36) in this box — so tilting the can about its base
+   already lands the rim on the muzzle; it only needs a small lift. */
+.foxwrap.drinking .can { animation: fox-drink 2.4s ease-in-out 1; }
+
+@keyframes fox-drink {
+  0%        { opacity: 0; transform: translate(0, 9px)    rotate(4deg); }
+  14%       { opacity: 1; transform: translate(0, 0)      rotate(-9deg); }
+  32%, 66%  { opacity: 1; transform: translate(2.5px, -1px) rotate(-42deg); }  /* rim on the muzzle */
+  84%       { opacity: 1; transform: translate(0, 0)      rotate(-8deg); }
+  100%      { opacity: 0; transform: translate(0, 9px)    rotate(4deg); }
+}
+
+/* while drinking: the right paw stays raised (holding the can) and the
+   typing loop pauses, so the paw doesn't flap mid-swig */
+.foxwrap.drinking .fox-code-l { animation: none; opacity: 0; }
+.foxwrap.drinking .fox-code-r { animation: none; opacity: 1; }
+
 @keyframes fox-type-l { 0%, 49%  { opacity: 1; } 50%, 100% { opacity: 0; } }
 @keyframes fox-type-r { 0%, 49%  { opacity: 0; } 50%, 100% { opacity: 1; } }
 @keyframes fox-nudge  { 0%, 90%  { opacity: 0; } 91%, 96% { opacity: 1; } 97%, 100% { opacity: 0; } }
@@ -158,7 +191,8 @@ h2 { font-size: 1.75em; }
 
 /* touch devices: no hover, so just show the sleeping fox */
 @media (hover: none) {
-  .foxwrap .fox-wake, .foxwrap .fox-code, .foxwrap .excl, .foxwrap .caret { display: none; }
+  .foxwrap .fox-wake, .foxwrap .fox-code, .foxwrap .excl, .foxwrap .caret,
+  .foxwrap .can { display: none; }
 }
 
 /* keep code monospaced */
@@ -254,7 +288,7 @@ h1 {
 
 <div class="profile-header">
   <div class="profile-content">
-    <h1>Alexis Fox<span class="foxwrap"><img class="fox-sleep" src="assets/images/fox.png" alt=""><img class="fox-wake" src="assets/images/fox-wake.png" alt=""><img class="fox-code" src="assets/images/fox-coding.png" alt=""><img class="fox-code fox-code-l" src="assets/images/fox-coding-l.png" alt=""><img class="fox-code fox-code-r" src="assets/images/fox-coding-r.png" alt=""><img class="fox-code fox-code-g" src="assets/images/fox-coding-g.png" alt=""><img class="excl" src="assets/images/excl.png" alt=""><span class="caret"></span></span></h1>
+    <h1>Alexis Fox<span class="foxwrap"><img class="fox-sleep" src="assets/images/fox.png" alt=""><img class="fox-wake" src="assets/images/fox-wake.png" alt=""><img class="fox-code" src="assets/images/fox-coding.png" alt=""><img class="fox-code fox-code-l" src="assets/images/fox-coding-l.png" alt=""><img class="fox-code fox-code-r" src="assets/images/fox-coding-r.png" alt=""><img class="fox-code fox-code-g" src="assets/images/fox-coding-g.png" alt=""><img class="excl" src="assets/images/excl.png" alt=""><span class="caret"></span><img class="can" src="assets/images/can.png" alt=""></span></h1>
 
 <script>
   // Hovering anywhere in the profile block startles the fox awake ("!"),
@@ -270,6 +304,9 @@ h1 {
     setTimeout(function () { ready = true; }, 1000);
     block.addEventListener('mouseenter', function () {
       if (!ready) return;
+      // Already awake or mid-session? Leave it be — re-entering the header
+      // shouldn't startle a fox that's busy coding.
+      if (wrap.classList.contains('awake')) return;
       timers.forEach(clearTimeout);
       timers = [];
       wrap.classList.remove('coding');
@@ -277,8 +314,17 @@ h1 {
       timers.push(setTimeout(function () {                          // settles in to code
         wrap.classList.add('coding');
       }, 800));
+      // take a swig a few seconds in, and again later
+      [4200, 10600].forEach(function (t) {
+        timers.push(setTimeout(function () {
+          wrap.classList.add('drinking');
+          timers.push(setTimeout(function () {
+            wrap.classList.remove('drinking');
+          }, 2400));
+        }, t));
+      });
       timers.push(setTimeout(function () {                          // ...then dozes off again
-        wrap.classList.remove('awake', 'coding');
+        wrap.classList.remove('awake', 'coding', 'drinking');
       }, 15800));
     });
   });
