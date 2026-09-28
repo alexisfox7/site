@@ -355,6 +355,19 @@ h1 {
 <div style="margin-top: 50px;"></div>
 
 ## Publications
+**Behavior Gradient Fields** \\
+*<u>Alexis Fox</u>, David Alvarez-Melis* \\
+Coming soon :)
+
+<div style="margin-top: 40px;"></div>
+
+**What the Geometry of Good Models Tells Us** \\
+*<u>Alexis Fox</u><sup>*</sup>, Samuel Orellana Mateo<sup>*</sup>, Krish Yadav<sup>*</sup>, Yiyang Sun, Zachery Boner, Cynthia Rudin* \\
+Advances in Neural Information Processing Systems (NeurIPS) \\
+<span class="highlight-oral">Spotlight</span>
+
+<div style="margin-top: 40px;"></div>
+
 **PRO-LONG: Programmatic Memory Enables Long-Horizon Reasoning** \\
 *<u>Alexis Fox</u>, Junlin Wang, Paul Rosu, Bhuwan Dhingra*  \\
 arXiv preprint, 2026
@@ -369,6 +382,6 @@ arXiv preprint, 2026
 **A Unifying Information-theoretic Perspective on Evaluating Generative Models** \\
 *<u>Alexis Fox</u>, Samarth Swarup, Abhijin Adiga*  \\
 Proceedings of the AAAI Conference on Artificial Intelligence 2025  \\
-<span class="highlight-oral">Oral (5%)</span>
+<span class="highlight-oral">Oral</span>
 
 <p class="publinks" markdown="1">[[Paper](https://arxiv.org/abs/2412.14340)] [[Code](https://github.com/NSSAC/PrecisionRecallMetric)]</p>
