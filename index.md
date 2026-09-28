@@ -363,7 +363,7 @@ Coming soon :)
 
 **What the Geometry of Good Models Tells Us** \\
 *<u>Alexis Fox</u><sup>*</sup>, Samuel Orellana Mateo<sup>*</sup>, Krish Yadav<sup>*</sup>, Yiyang Sun, Zachery Boner, Cynthia Rudin* \\
-Advances in Neural Information Processing Systems (NeurIPS) \\
+Advances in Neural Information Processing Systems (NeurIPS) 2026 \\
 <span class="highlight-oral">Spotlight</span>
 
 <div style="margin-top: 40px;"></div>
